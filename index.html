@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清邁 6+1 </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-active { border-bottom: 3px solid #10b981; color: #10b981; font-weight: bold; }
+        .tab-inactive { border-bottom: 3px solid transparent; color: #6b7280; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        nav::-webkit-scrollbar { display: none; }
+        input[type="checkbox"]:checked + span { text-decoration: line-through; color: #9ca3af; }
+    </style>
+</head>
+<body class="bg-stone-50 font-sans text-gray-800">
+
+    <header class="bg-emerald-600 text-white p-8 text-center shadow-md">
+        <h1 class="text-3xl font-bold mb-2 tracking-wide">清邁旅行</h1>
+        <p class="text-emerald-100 text-sm">| 4/26 - 5/2 | </p>
+    </header>
+
+    <main class="max-w-3xl mx-auto mt-6 mb-10 px-4">
+        
+        <nav class="flex overflow-x-auto border-b border-gray-200 bg-white rounded-t-lg sticky top-0 z-20 shadow-sm" id="tabs">
+            <button onclick="switchTab('checklist')" class="tab-btn tab-active px-5 py-4 text-sm whitespace-nowrap" data-target="checklist">🧳 裝備自備</button>
+            <button onclick="switchTab('notes')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="notes">⚠️ 注意事項</button>
+            <button onclick="switchTab('day1')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day1">4/26</button>
+            <button onclick="switchTab('day2')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day2">4/27</button>
+            <button onclick="switchTab('day3')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day3">4/28</button>
+            <button onclick="switchTab('day4')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day4">4/29</button>
+            <button onclick="switchTab('day5')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day5">4/30</button>
+            <button onclick="switchTab('day6')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day6">5/1</button>
+            <button onclick="switchTab('day7')" class="tab-btn tab-inactive px-5 py-4 text-sm whitespace-nowrap" data-target="day7">5/2</button>
+        </nav>
+
+        <div class="bg-white p-6 shadow-sm rounded-b-lg">
+            
+            <div id="checklist" class="tab-content active">
+                <section class="mb-8">
+                    <h2 class="text-xl font-bold text-emerald-700 mb-4 border-b-2 border-emerald-100 pb-2">💰 預算費用 (TWD)</h2>
+                    <div class="grid grid-cols-1 gap-2 text-sm">
+                        <div class="flex justify-between p-2 bg-emerald-50 rounded"><span>團費 </span><span class="font-bold">10,000</span></div>
+                        <div class="flex justify-between p-2 bg-emerald-50 rounded"><span>Full Set裝備租借 (4天)</span><span class="font-bold">2,000</span></div>
+                        <div class="flex justify-between p-2 bg-emerald-50 rounded"><span>4/25 飯店價差</span><span class="font-bold">500</span></div>
+                        <div class="flex justify-between p-2 bg-orange-50 rounded"><span>沒有台幣</span><span class="font-bold">五福玉有</span></div>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-xl font-bold text-emerald-700 mb-4 border-b-2 border-emerald-100 pb-2">💰 預算費用 (THB)</h2>
+                    <div class="grid grid-cols-1 gap-2 text-sm">
+                        <div class="flex justify-between p-2 bg-orange-50 rounded"><span>潛導小費 (全程)</span><span class="font-bold">1,000</span></div>
+                        <div class="flex justify-between p-2 bg-orange-50 rounded"><span>船員小費</span><span class="font-bold">500 - 1,000</span></div>
+                        <div class="flex justify-between p-2 bg-orange-50 rounded"><span>船宿 Starlink </span><span class="font-bold">400</span></div>
+                        <div class="flex justify-between p-2 bg-orange-50 rounded"><span>零食飲料酒精</span><span class="font-bold">自行評估</span></div>
+                    </div>
+                </section>
+
+                <section class="mb-8">
+                    <h2 class="text-xl font-bold text-emerald-700 mb-4 border-b-2 border-emerald-100 pb-2">
+                        📍 <a href="https://maps.app.goo.gl/FYLciva32MZ2iUd78" target="_blank" class="underline decoration-emerald-500 hover:text-emerald-500">住宿地點 (點我導航)</a>
+                    </h2>
+                    <div class="mb-4 p-3 bg-white border border-emerald-100 rounded-lg shadow-sm">
+                        <p class="text-sm font-bold text-gray-700">【 英文地址 】</p>
+                        <p class="text-sm text-gray-600 mb-2">Nimmanhaemin Road, Soi 17, Suthep, Mueang Chiang Mai District, Chiang Mai 50200, Thailand</p>
+                        <p class="text-sm font-bold text-gray-700">【 泰文地址 】</p>
+                        <p class="text-sm text-gray-600">ถนนนิมมานเหมินท์ ซอย 17, ตำบลสุเทพ, อำเภอเมืองเชียงใหม่, เชียงใหม่ 50200</p>
+                        <p class="text-sm font-bold text-gray-700">【 酒店名稱】</p>
+                        <p class="text-sm text-gray-600">普吉島巴東區英迪格酒店－IHG 旗下酒店 โรงแรม อินดิโก ภูเก็ต ป่าตอง</p>
+                    </div>
+                </section>
+
+                <h2 class="text-xl font-bold text-emerald-700 mb-4 border-b-2 border-emerald-100 pb-2 text-center">行李打包勾選清單</h2>
+                <div class="space-y-3" id="main_checklist">
+
+                    <h3 class="font-bold text-gray-500 text-xs mt-4 mb-2">【 4/20必做 】</h3>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>ATM拿港幣</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>買暈船藥</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>買電話卡(12天以上)</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>討論行程</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>收拾行李</span></label>
+
+
+                    <h3 class="font-bold text-gray-500 text-xs mt-4 mb-2">【 核心必備 】</h3>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>護照、TDAC檔案下載到手機 / 財力證明現金</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>港幣 (當地換泰銖用) / eSIM</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>手機 / 錢包 / 鑰匙 / 行動電源 / 充電器 </span></label>
+                    
+                    <h3 class="font-bold text-gray-500 text-xs mt-4 mb-2">【 戶外/電器/生活 】</h3>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>X5 + 潛水殼</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>防曬乳 / 太陽眼鏡 / 帽子</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>防水包 / 強效防蚊液</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>轉接頭 / 220V 吹風機注意</span></label>
+                    
+                    <h3 class="font-bold text-gray-500 text-xs mt-4 mb-2">【 穿著與個人 】</h3>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>薄長袖外套 (茵他儂避暑用)</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>換洗衣物 / 盥洗用品</span></label>
+                    <label class="flex items-center space-x-3 p-2 bg-gray-50 rounded"><input type="checkbox" onchange="saveCheck()"> <span>個人常備藥品 (止瀉、感冒藥)</span></label>
+                </div>
+            </div> <div id="notes" class="tab-content">
+                <h2 class="text-xl font-bold text-emerald-700 mb-6 border-b-2 border-emerald-100 pb-2 text-center">在地注意事項</h2>
+                <div class="space-y-6 text-sm md:text-base">
+                    <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500">
+                        <p class="font-bold text-red-700">🚫 換匯避坑</p>
+                        <p class="text-gray-700 mt-1">別在機場換！去市區 **Mr. Pierre** 或 **SuperRich**，匯率接近 1:1。</p>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                        <p class="font-bold text-blue-700">🚗 交通工具</p>
+                        <p class="text-gray-700 mt-1">下載 **Grab** 與 **Bolt**，Bolt 通常更便宜且叫車快。</p>
+                    </div>
+                    <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                        <p class="font-bold text-orange-700">🕌 寺廟禁忌</p>
+                        <ul class="list-disc ml-5 mt-1 text-gray-600">
+                            <li>穿著須過膝遮肩，進殿須脫鞋。</li>
+                            <li>女性不可觸碰僧侶或直接遞送物品。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                        <p class="font-bold text-green-700">💳 消費：加 3% 手續費也要刷卡</p>
+                        <p class="text-gray-700 mt-1">清邁刷卡回饋極高。就算店家收 3% 手續費，搭配國外高回饋卡 (3.3%~10%) 還是賺，且匯率更佳。</p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-gray-500">
+                        <p class="font-bold text-gray-700">🧴 購物推薦</p>
+                        <p class="text-gray-700 mt-1">**Win Cosmetics** 是當地美妝批發倉，比大賣場還便宜。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="day1" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 1 (4/26 週日)：古城與夜市</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍜</span><div><p class="font-bold">中午：Khao Soi Khun Yai</p><p class="text-gray-600">清邁最強咖哩麵 (10:00-14:00)</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">📸</span><div><p class="font-bold">下午：古蹟巡禮</p><p class="text-gray-600">柴迪隆寺、帕邢寺、塔佩門拍照</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍧</span><div><p class="font-bold">甜點：Cheevit Cheeva</p><p class="text-gray-600">創意雪糕/刨冰，鹹蛋黃珍珠必點</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🛍️</span><div><p class="font-bold">晚上：Sunday Walking Street</p><p class="text-gray-600">全泰最大週日大夜市</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4 text-emerald-600">🌿</span><div><p class="font-bold text-emerald-700">備選：Haze Buds</p><p class="text-gray-600">就在夜市主幹道二樓，邊抽邊看風景</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">💆</span><div><p class="font-bold">按摩：Devi Massage</p><p class="text-gray-600">建議 21:00 逛完夜市後按</p></div></div>
+                </div>
+            </div>
+
+            <div id="day2" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 2 (4/27 週一)：極限飛索與寧曼路</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">🦅</span><div><p class="font-bold">上午：Skyline Adventure</p><p class="text-gray-600">叢林飛索：含接送，滑索最長刺激</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">👗</span><div><p class="font-bold">下午：One Nimman & MAYA</p><p class="text-gray-600">一號寧曼絕美紅磚建築商場</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">☕</span><div><p class="font-bold">下午茶：精品咖啡</p><p class="text-gray-600">Graph 或 Ristr8to Original (拉花冠軍)</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍦</span><div><p class="font-bold">甜點：Sofuto Cream</p><p class="text-gray-600">濃郁系日式霜淇淋，雪糕控的聖地</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4 text-emerald-600">🌿</span><div><p class="font-bold text-emerald-700">備選：Trichome cnx cannabis cafe</p><p class="text-gray-600"></p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">✨</span><div><p class="font-bold">舒壓：Fah Lanna Spa (寧曼店)</p><p class="text-gray-600">裝潢極美，需提前預約</p></div></div>
+                </div>
+            </div>
+
+            <div id="day3" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 3 (4/28 週二) 清萊一日遊</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">🚐</span><div><p class="font-bold">全日景點：白廟、藍廟、黑屋</p><p class="text-gray-600">泰國最美建築巡禮 (包車一日遊)</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🥥</span><div><p class="font-bold">甜點：椰子殼冰淇淋</p><p class="text-gray-600">經典泰式雪糕，北門下車路邊攤即買即吃</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍗</span><div><p class="font-bold">晚上：鳳飛飛豬腳飯</p><p class="text-gray-600">古城北門外傳奇排隊美食</p></div></div>
+                </div>
+            </div>
+
+            <div id="day4" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 4 (4/29 週三) 神山與森林寺廟</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">⛰️</span><div><p class="font-bold">上午：茵他儂山 (Doi Inthanon)</p><p class="text-gray-600">神山雙塔、瀑布，避暑行程</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍰</span><div><p class="font-bold">甜點：Chom Cafe</p><p class="text-gray-600">網美森林系景觀，下山去動物園途中順路</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🛕</span><div><p class="font-bold">下午：Wat Pha Lat (森林斜坡寺)</p><p class="text-gray-600">像古墓奇兵的隱藏景點</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🦒</span><div><p class="font-bold">傍晚：夜間動物園 (Night Safari)</p><p class="text-gray-600">17:30 抵達最合適</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍽️</span><div><p class="font-bold">晚上：The Good View Village</p><p class="text-gray-600">河邊景觀餐廳，現場駐唱氛圍好</p></div></div>
+                </div>
+            </div>
+
+            <div id="day5" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 5 (4/30 週四) 大象與文青村</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">🐘</span><div><p class="font-bold">上午：Elephant Jungle Sanctuary</p><p class="text-gray-600">大象保護營：不騎象，準備午餐體驗</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🎨</span><div><p class="font-bold">下午：Baan Kang Wat 藝術村</p><p class="text-gray-600">手作小店與森林咖啡廳</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">☕</span><div><p class="font-bold">甜點：No.39 Cafe & Forest Bake</p><p class="text-gray-600">湖畔雪糕與森林蛋糕，藝術村下午茶雙連發</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4 text-emerald-600">🌿</span><div><p class="font-bold text-emerald-700">備選：GoGreen Bar - Weed & Cannabis</p><p class="text-gray-600">結合酒吧</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4 text-emerald-600">🌿</span><div><p class="font-bold text-emerald-700">備選：MEDELLÍN - Yes, we cannabis (420 weed shop 大麻 마리화나</p><p class="text-gray-600">結合酒吧</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🕯️</span><div><p class="font-bold">晚餐：Ginger Farm Kitchen</p><p class="text-gray-600">米其林裝潢網美餐廳</p></div></div>
+                </div>
+            </div>
+
+            <div id="day6" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 6 (5/1 週五) 最後採買</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start"><span class="text-2xl mr-4">🛍️</span><div><p class="font-bold">上午：瓦洛洛市場 (Warorot Market)</p><p class="text-gray-600">採買芒果乾、手標奶茶粉</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍲</span><div><p class="font-bold">中午：Huen Phen</p><p class="text-gray-600">古城老字號泰北菜</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🍮</span><div><p class="font-bold">甜點：Wanlamun</p><p class="text-gray-600">高級泰式精緻甜點，採買完後的質感結尾</p></div></div>
+                    <div class="flex items-start"><span class="text-2xl mr-4">🚶</span><div><p class="font-bold">下午：JingJai Market (常設店)</p><p class="text-gray-600">寧曼路小店二刷或按摩</p></div></div>
+                </div>
+            </div>
+
+            <div id="day7" class="tab-content">
+                <h2 class="text-2xl font-bold text-emerald-700 mb-6 border-l-4 border-emerald-500 pl-3">Day 7 (5/2 週六) JJ Market 週末版</h2>
+                <div class="space-y-6">
+                    <p class="font-bold">🌿 早上：JingJai Market 週末精彩版</p>
+                    <p class="text-gray-600">有 Live Band 與文創攤位，必逛市集。</p>
+                    <p class="font-bold mt-4">🍦 甜點：JJ Market 手作職人攤位</p>
+                    <p class="text-gray-600">在地純手工雪糕，邊逛邊吃尋找週末隱藏版。</p>
+                    <p class="font-bold mt-4">✈️ 前往機場：帶著戰利品返家</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('tab-active');
+                el.classList.add('tab-inactive');
+            });
+            document.getElementById(tabId).classList.add('active');
+            const targetBtn = document.querySelector(`button[data-target="${tabId}"]`);
+            targetBtn.classList.add('tab-active');
+            targetBtn.classList.remove('tab-inactive');
+            targetBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+
+        function saveCheck() {
+            const checks = Array.from(document.querySelectorAll('#main_checklist input')).map(i => i.checked);
+            localStorage.setItem('cm_final_v5', JSON.stringify(checks));
+        }
+
+        window.onload = function() {
+            const saved = JSON.parse(localStorage.getItem('cm_final_v5'));
+            if (saved) {
+                document.querySelectorAll('#main_checklist input').forEach((el, i) => {
+                    el.checked = saved[i] || false;
+                });
+            }
+        }
+    </script>
+</body>
+</html>
